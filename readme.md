@@ -191,13 +191,6 @@ brain-tumor-mri-dl/
 ├── .gitignore
 ├── notebook/
 │   └── brain_tumor_classification.ipynb
-├── src/
-│   ├── config.py
-│   ├── data_loader.py
-│   ├── model_builder.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── gradcam.py
 ├── results/
 │   ├── training_curves_full.png
 │   ├── phase_comparison_bar.png
