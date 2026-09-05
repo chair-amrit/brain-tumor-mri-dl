@@ -1,0 +1,4 @@
+model,accuracy,bootstrap_ci_lower,bootstrap_ci_upper,n
+VGG16,0.934375,0.921875,0.94625,1600
+ResNet50,0.92625,0.913125,0.93875,1600
+EfficientNetB0,0.90125,0.886875,0.915625,1600

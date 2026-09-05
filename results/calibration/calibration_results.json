@@ -1,0 +1,73 @@
+{
+  "test_set_size": 1600,
+  "n_classes": 4,
+  "models": [
+    "VGG16",
+    "ResNet50",
+    "EfficientNetB0"
+  ],
+  "seed": 42,
+  "n_bins": 10,
+  "bin_edges": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "ece_definition": "Expected Calibration Error: weighted average of |mean_confidence - accuracy| across 10 fixed equal-width bins [0,1], weighted by bin sample fraction. Last bin is closed on both ends to include confidence == 1.0.",
+  "brier_definition": "Multiclass Brier score: mean squared error between full predicted probability vector and one-hot true label vector, averaged over all samples.",
+  "thresholds_checked": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "calibration_summary": [
+    {
+      "model": "VGG16",
+      "accuracy": 0.934375,
+      "ece": 0.039951782226562454,
+      "brier_score": 0.10671245540024148,
+      "mean_confidence": "0.974",
+      "high_conf_errors_80": 57,
+      "high_conf_errors_90": 49,
+      "high_conf_errors_95": 42,
+      "high_conf_errors_80_pct_of_errors": 54.285714285714285,
+      "high_conf_errors_90_pct_of_errors": 46.666666666666664,
+      "high_conf_errors_95_pct_of_errors": 40.0
+    },
+    {
+      "model": "ResNet50",
+      "accuracy": 0.92625,
+      "ece": 0.048879089355468766,
+      "brier_score": 0.120251096762148,
+      "mean_confidence": "0.9736",
+      "high_conf_errors_80": 74,
+      "high_conf_errors_90": 49,
+      "high_conf_errors_95": 42,
+      "high_conf_errors_80_pct_of_errors": 62.71186440677966,
+      "high_conf_errors_90_pct_of_errors": 41.52542372881356,
+      "high_conf_errors_95_pct_of_errors": 35.59322033898305
+    },
+    {
+      "model": "EfficientNetB0",
+      "accuracy": 0.90125,
+      "ece": 0.022709350585937507,
+      "brier_score": 0.15281810095448778,
+      "mean_confidence": "0.924",
+      "high_conf_errors_80": 67,
+      "high_conf_errors_90": 38,
+      "high_conf_errors_95": 17,
+      "high_conf_errors_80_pct_of_errors": 42.405063291139236,
+      "high_conf_errors_90_pct_of_errors": 24.050632911392405,
+      "high_conf_errors_95_pct_of_errors": 10.759493670886076
+    }
+  ],
+  "generated_at": "2026-09-05T02:21:42.733449"
+}

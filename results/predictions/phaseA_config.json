@@ -1,0 +1,42 @@
+{
+  "test_dir": "/kaggle/input/datasets/masoudnickparvar/brain-tumor-mri-dataset/Testing",
+  "total_images": 1600,
+  "classes": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "class_to_id": {
+    "glioma": 0,
+    "meningioma": 1,
+    "notumor": 2,
+    "pituitary": 3
+  },
+  "image_size": [
+    224,
+    224
+  ],
+  "batch_size": 64,
+  "seed": 42,
+  "preprocessing": "Embedded inside each model as a Lambda(preprocess_input) layer \u2014 NOT applied externally. Inference input = raw resized image, 0-255 float32.",
+  "model_files": {
+    "VGG16": "/kaggle/input/datasets/bbeastboy/brain-tumor-phase2-models/VGG16_phase2_best.keras",
+    "ResNet50": "/kaggle/input/datasets/bbeastboy/brain-tumor-phase2-models/ResNet50_phase2_best.keras",
+    "EfficientNetB0": "/kaggle/input/datasets/bbeastboy/brain-tumor-phase2-models/EfficientNetB0_phase2_best.keras"
+  },
+  "model_phase": "phase2_best (restore_best_weights=True)",
+  "original_mixed_precision": "mixed_float16",
+  "inference_time_note": "batch-derived per-image ms, not isolated single-image latency",
+  "corrupt_files_found": 0,
+  "environment": {
+    "tensorflow_version": "2.20.0",
+    "keras_version": "3.13.2",
+    "python_version": "3.12.13",
+    "gpus": [
+      "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')",
+      "PhysicalDevice(name='/physical_device:GPU:1', device_type='GPU')"
+    ]
+  },
+  "generated_at": "2026-09-04T18:37:12.360392"
+}

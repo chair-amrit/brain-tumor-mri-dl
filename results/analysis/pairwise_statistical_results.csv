@@ -1,0 +1,4 @@
+comparison,model_A,model_B,accuracy_A,accuracy_B,accuracy_difference,mcnemar_raw_p,mcnemar_holm_p,significant,bootstrap_ci_lower,bootstrap_ci_upper,n_A_correct_B_wrong,n_B_correct_A_wrong,n_discordant
+VGG16_vs_ResNet50,VGG16,ResNet50,0.934375,0.92625,0.0081249999999999,0.1237314425380921,0.1237314425380921,False,-0.00125,0.0181249999999999,37,24,61
+VGG16_vs_EfficientNetB0,VGG16,EfficientNetB0,0.934375,0.90125,0.0331249999999999,8.534327680773065e-08,2.560298304231919e-07,True,0.0212499999999999,0.0456249999999999,76,23,99
+ResNet50_vs_EfficientNetB0,ResNet50,EfficientNetB0,0.92625,0.90125,0.025,7.85013964559367e-05,0.0001570027929118,True,0.013125,0.0374999999999999,70,30,100

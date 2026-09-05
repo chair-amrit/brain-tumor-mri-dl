@@ -1,0 +1,4 @@
+model,total_errors,shared_errors,model_specific_errors,glioma_errors,meningioma_errors,glioma_meningioma_confusions,high_confidence_errors_90
+VGG16,105,72,14,81,20,53,49
+ResNet50,118,72,21,74,41,64,49
+EfficientNetB0,158,72,60,95,49,84,38

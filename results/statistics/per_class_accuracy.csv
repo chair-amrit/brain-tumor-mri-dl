@@ -1,0 +1,13 @@
+model,class,class_id,n_samples,accuracy
+VGG16,glioma,0,400,0.7975
+VGG16,meningioma,1,400,0.95
+VGG16,notumor,2,400,0.9975
+VGG16,pituitary,3,400,0.9925
+ResNet50,glioma,0,400,0.815
+ResNet50,meningioma,1,400,0.8975
+ResNet50,notumor,2,400,1.0
+ResNet50,pituitary,3,400,0.9925
+EfficientNetB0,glioma,0,400,0.7625
+EfficientNetB0,meningioma,1,400,0.8775
+EfficientNetB0,notumor,2,400,0.9875
+EfficientNetB0,pituitary,3,400,0.9775

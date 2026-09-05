@@ -1,0 +1,4 @@
+model,mean_confidence_correct,median_confidence_correct,mean_confidence_incorrect,median_confidence_incorrect,n_correct,n_incorrect
+VGG16,0.986,1.0,0.811,0.879,1495,105
+ResNet50,0.985,1.0,0.8306,0.868,1482,118
+EfficientNetB0,0.9443,0.9927,0.7344,0.764,1442,158
