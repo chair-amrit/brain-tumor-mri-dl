@@ -27,6 +27,8 @@
 - [🔁 Two-Phase Training](#-two-phase-training)
 - [📐 Statistical Evaluation](#-statistical-evaluation)
 - [🔍 Failure Analysis](#-failure-analysis)
+- [🔗 Cross-Model Shared-Failure Analysis](#-cross-model-shared-failure-analysis)
+- [🧮 Probability Ensemble](#-probability-ensemble)
 - [🎯 Confidence & Calibration](#-confidence--calibration)
 - [🧠 Grad-CAM Explainability](#-grad-cam-explainability)
 - [📈 Key Findings](#-key-findings)
@@ -102,7 +104,7 @@ These efficiency measurements are specific to the evaluated software/hardware se
 
 The study follows a staged evaluation pipeline:
 
-**Training → Controlled Inference → Statistical Testing → Failure Analysis → Calibration → Explainability → Research Synthesis**
+**Training → Controlled Inference → Statistical Testing → Failure Analysis → Cross-Model Failure Analysis → Calibration → Explainability → Research Synthesis**
 
 ### Phase A — Prediction Generation
 
@@ -144,6 +146,12 @@ Errors are grouped into:
 - representative difficult cases
 
 📁 Results: [`results/failures/`](results/failures/)
+
+### Phase C.1 — Cross-Model Failure Analysis
+
+Using the saved, aligned Phase A probabilities only, this stage characterizes error overlap across the three checkpoints. It includes error-overlap categories, pairwise error agreement, confidence-based descriptive comparisons, a mean-probability ensemble, and a case-level table for the shared failures.
+
+📁 Results: [`results/cross_model_failure/`](results/cross_model_failure/)
 
 ### Phase D — Model Behavior
 
@@ -249,7 +257,7 @@ The final test predictions were analyzed to determine whether errors were shared
 | ResNet50 | 118 | 72 | 21 |
 | EfficientNetB0 | 158 | 72 | **60** |
 
-**72 images** were misclassified by all three models, representing **4.5% of the test set**.
+**72 images** were misclassified by all three models, representing **4.5% of the test set**. A descriptive case-level follow-up identified **49/72 shared failures** where every model predicted the same incorrect class.
 
 ### Major confusion pattern
 
@@ -265,6 +273,23 @@ Glioma was also the dominant source of classification errors across the evaluate
 📄 [`failure_summary_counts.csv`](results/failures/failure_summary_counts.csv)
 
 📊 [`cross_model_failure_distribution.png`](figures/cross_model_failure_distribution.png)
+
+## 🔗 Cross-Model Shared-Failure Analysis
+
+The aligned predictions partition the test set into 1,398 cases correct for all models, 95 one-model failures, 35 two-model failures, and 72 shared failures. The shared failures comprise 60 glioma, 10 meningioma, and 2 pituitary cases; no no-tumor image was a shared failure.
+
+There are 16 distinct three-model wrong-prediction patterns. Of the 49 unanimous wrong-class cases, the largest transitions were glioma → meningioma (30 cases), glioma → no-tumor (10 cases), and meningioma → pituitary (6 cases). These prediction patterns are descriptive: they do not establish the cause of a shared failure, intrinsic image difficulty, label quality, or clinical ambiguity.
+
+📄 [`case_categories.csv`](results/cross_model_failure/case_categories.csv)  
+📄 [`shared_failure_cases_true_and_predictions.csv`](results/cross_model_failure/shared_failure_cases_true_and_predictions.csv)  
+📄 [`shared_failure_true_to_prediction_patterns.csv`](results/cross_model_failure/shared_failure_true_to_prediction_patterns.csv)  
+📄 [`shared_failure_unanimous_wrong_summary.csv`](results/cross_model_failure/shared_failure_unanimous_wrong_summary.csv)
+
+## 🧮 Probability Ensemble
+
+An unweighted mean-probability ensemble achieved **94.06%** accuracy with 95 errors. All **72 shared failures** remained ensemble errors. The ensemble's observed accuracy was 0.625 percentage points higher than VGG16, but the paired exact McNemar comparison was not statistically significant (`p = 0.0872`). Thus, this simple averaging approach did not resolve the shared-failure set.
+
+📄 [`ensemble_analysis.csv`](results/cross_model_failure/ensemble_analysis.csv)
 
 ---
 
@@ -347,7 +372,7 @@ EfficientNetB0 had the lowest ECE, but its overall classification and Brier perf
 
 ### 🔍 Failure behavior
 
-All models shared 72 failures. EfficientNetB0 produced substantially more total and model-specific errors and showed the highest number of glioma ↔ meningioma confusions.
+All models shared 72 failures, including 49 unanimous wrong-class predictions. EfficientNetB0 produced substantially more total and model-specific errors and showed the highest number of glioma ↔ meningioma confusions. A simple mean-probability ensemble did not correct any shared failure.
 
 ### 🧩 Overall conclusion
 
@@ -363,11 +388,13 @@ The current results are limited to:
 - a held-out test set of 1,600 images
 - the evaluated test distribution
 - the specific training and preprocessing pipeline
+- one saved Phase 2 checkpoint per architecture and one held-out split
 - the measured hardware/software environment
 
 The study does **not** establish:
 
 - external-dataset generalization
+- the cause, intrinsic difficulty, or label quality of shared failures
 - clinical validity
 - diagnostic safety
 - regulatory compliance
@@ -408,6 +435,7 @@ Real-world MRI data may differ in scanner, acquisition protocol, preprocessing, 
     │   ├── statistics/
     │   ├── failures/
     │   ├── calibration/
+    │   ├── cross_model_failure/
     │   ├── explainability/
     │   │   └── gradcam/
     │   └── analysis/
@@ -457,6 +485,7 @@ The repository separates analysis into reproducible stages:
 - Statistical evaluation → [`src/statistics/`](src/statistics/)
 - Failure analysis → [`src/analysis/failure_analysis.py`](src/analysis/failure_analysis.py)
 - Calibration → [`src/analysis/calibration_analysis.py`](src/analysis/calibration_analysis.py)
+- Cross-model failure analysis → [`src/analysis/cross_model_failure_analysis.py`](src/analysis/cross_model_failure_analysis.py)
 - Model behavior synthesis → [`src/analysis/model_behavior_analysis.py`](src/analysis/model_behavior_analysis.py)
 - Final comparison table → [`src/analysis/final_model_comparison.py`](src/analysis/final_model_comparison.py)
 - Grad-CAM → [`src/explainability/gradcam_analysis.py`](src/explainability/gradcam_analysis.py)
@@ -472,6 +501,9 @@ The repository separates analysis into reproducible stages:
 | [`failure_cases.csv`](results/failures/failure_cases.csv) | Selected difficult cases |
 | [`gradcam_metadata.csv`](results/failures/gradcam_metadata.csv) | Grad-CAM case index |
 | [`calibration_summary.csv`](results/calibration/calibration_summary.csv) | ECE, Brier and confidence results |
+| [`case_categories.csv`](results/cross_model_failure/case_categories.csv) | Aligned cross-model error categories |
+| [`shared_failure_true_to_prediction_patterns.csv`](results/cross_model_failure/shared_failure_true_to_prediction_patterns.csv) | True class and three-model prediction-pattern counts for shared failures |
+| [`ensemble_analysis.csv`](results/cross_model_failure/ensemble_analysis.csv) | Mean-probability ensemble results |
 | [`reliability_diagram.png`](results/calibration/reliability_diagram.png) | Calibration visualization |
 
 ### Key Figures
