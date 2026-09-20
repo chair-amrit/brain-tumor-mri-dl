@@ -64,6 +64,14 @@ All three models misclassified the same **72 test images**, corresponding to **4
 
 Glioma was the dominant source of errors across the models, and the **glioma–meningioma distinction** was a major recurring confusion pattern.
 
+### Cross-model shared-failure characterization
+
+The aligned cross-model analysis partitioned the test set into 1,398 correct-for-all cases, 95 one-model failures, 35 two-model failures, and 72 shared failures. The shared set contained 60 glioma, 10 meningioma, and 2 pituitary images.
+
+The 72 cases exhibited 16 distinct three-model prediction patterns. In 49 cases, all three models selected the same wrong class; the most frequent transitions were glioma → meningioma (30 cases), glioma → no-tumor (10 cases), and meningioma → pituitary (6 cases). These are observed prediction patterns, not evidence of their underlying cause.
+
+An unweighted mean-probability ensemble achieved 94.06% accuracy with 95 errors, but all 72 shared failures remained errors. The ensemble therefore did not resolve this shared-failure set.
+
 ## 6. Explainability
 
 Grad-CAM analysis was performed on **270 selected failure cases**, covering shared failures, model-specific failures, pairwise disagreements, and class-confusion cases. The generated metadata links each selected case to its corresponding model, failure category, target convolutional layer, and Grad-CAM output.
@@ -76,4 +84,4 @@ Under the evaluated dataset, checkpoints, preprocessing, and test protocol, **VG
 
 ## 8. Evidence Boundary
 
-These findings are limited to the evaluated dataset, experimental protocol, saved checkpoints, and test distribution. They do not establish clinical validity, safety for medical deployment, or generalization to external MRI datasets or populations. External-dataset evaluation remains a separate robustness experiment.
+These findings are limited to the evaluated dataset, experimental protocol, one saved checkpoint per architecture, and test distribution. They do not establish clinical validity, safety for medical deployment, generalization to external MRI datasets or populations, or the cause of the shared-failure patterns. External-dataset evaluation remains a separate robustness experiment.

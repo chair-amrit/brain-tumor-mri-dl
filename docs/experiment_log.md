@@ -150,6 +150,36 @@ Stored in [`results/failures/`](../results/failures/):
 
 ---
 
+## Phase C.1 — Cross-Model Failure Analysis
+
+### Objective
+
+Characterize which errors recur across the three saved checkpoints using the aligned Phase A predictions only. No models were retrained or re-run.
+
+### Observed Results
+
+- Error categories: 1,398 correct for all models, 95 one-model failures, 35 two-model failures, and 72 shared failures.
+- Shared-failure class composition: 60 glioma, 10 meningioma, 2 pituitary, and 0 no-tumor cases.
+- Unanimous wrong-class subset: 49/72 shared failures.
+- Dominant unanimous transitions: glioma → meningioma (30), glioma → no-tumor (10), and meningioma → pituitary (6).
+- Mean-probability ensemble: 94.06% accuracy with 95 errors; all 72 shared failures remained ensemble errors.
+
+### Outputs
+
+Stored in [`results/cross_model_failure/`](../results/cross_model_failure/):
+
+- `case_categories.csv`
+- `shared_failure_cases_true_and_predictions.csv`
+- `shared_failure_true_to_prediction_patterns.csv`
+- `shared_failure_unanimous_wrong_cases.csv`
+- `ensemble_analysis.csv`
+
+### Interpretation Boundary
+
+These results describe prediction overlap for the evaluated checkpoints and split. They do not establish why a case was jointly misclassified or whether it is intrinsically difficult, mislabeled, clinically ambiguous, or representative of another dataset.
+
+---
+
 ## Grad-CAM Explainability
 
 ### Objective
@@ -280,6 +310,7 @@ Throughout the study:
 - statistical comparisons used paired predictions
 - calibration was analyzed separately from accuracy
 - failure categories were retained for later interpretation
+- cross-model failure patterns were documented without causal interpretation
 - Grad-CAM was treated as post-hoc qualitative evidence
 - clinical claims were excluded from the conclusions
 

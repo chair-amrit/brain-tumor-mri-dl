@@ -186,6 +186,24 @@ Stored in [`results/failures/`](../results/failures/):
 
 ---
 
+## 7.1 Cross-Model Failure Analysis
+
+The frozen Phase A predictions are additionally analyzed after alignment by image ID. A shared failure is an image misclassified by all three saved checkpoints; the analysis does not perform model inference or retraining.
+
+The analysis produces error-overlap categories, pairwise error-agreement summaries, confidence-based descriptive analyses, a mean-probability ensemble assessment, and a true-class-to-three-model-prediction table for the shared failures. The latter separately records the unanimous wrong-class subset.
+
+Artifacts are stored in [`results/cross_model_failure/`](../results/cross_model_failure/), including:
+
+- [`case_categories.csv`](../results/cross_model_failure/case_categories.csv)
+- [`shared_failure_cases_true_and_predictions.csv`](../results/cross_model_failure/shared_failure_cases_true_and_predictions.csv)
+- [`shared_failure_true_to_prediction_patterns.csv`](../results/cross_model_failure/shared_failure_true_to_prediction_patterns.csv)
+- [`shared_failure_unanimous_wrong_cases.csv`](../results/cross_model_failure/shared_failure_unanimous_wrong_cases.csv)
+- [`ensemble_analysis.csv`](../results/cross_model_failure/ensemble_analysis.csv)
+
+The cross-model results characterize agreement among these three checkpoints on this held-out split. They are not used to infer latent image difficulty, label noise, a causal source of error, or clinical ambiguity.
+
+---
+
 ## 8. Grad-CAM Explainability
 
 Grad-CAM is used as a **post-hoc qualitative explanation method** for selected difficult predictions.
@@ -295,6 +313,8 @@ The table combines the principal evidence dimensions:
 | Calibration | ECE, Brier score |
 | Reliability | High-confidence errors |
 | Failure behavior | Total, shared, model-specific, and class-specific errors |
+| Cross-model overlap | Error categories, shared-failure prediction patterns, and unanimous wrong-class cases |
+| Ensemble boundary | Mean-probability ensemble accuracy and retained shared failures |
 | Confusion | Glioma ↔ meningioma errors |
 
 This consolidated representation supports the final multi-dimensional comparison without requiring additional model evaluation.

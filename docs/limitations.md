@@ -26,6 +26,12 @@ No external-dataset evaluation is included in the current core study.
 
 > External-dataset inference is reserved as an **optional robustness experiment** and is not required to support the current within-dataset findings.
 
+## Cross-Model Failure Interpretation
+
+The shared-failure analysis characterizes error overlap among three saved checkpoints on one held-out split. It cannot determine whether shared failures reflect intrinsic image difficulty, visual similarity, label noise, shared training/pretraining effects, or another source of correlation.
+
+The true-to-prediction tables, including the 49 unanimous wrong-class cases, are descriptive. They should not be interpreted as clinical adjudication or evidence that a class transition has a single underlying cause.
+
 ## 4. Explainability
 
 Grad-CAM provides **post-hoc visual explanations** of model predictions.
