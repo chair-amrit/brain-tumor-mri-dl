@@ -1,0 +1,7 @@
+section,model,accuracy,macro_f1,recall_glioma,recall_meningioma,recall_notumor,recall_pituitary,mean_confidence,ece,ece_bins,brier_multiclass,n_errors,label,ens_right_vgg_wrong,ens_wrong_vgg_right,acc_diff,acc_diff_lo,acc_diff_hi,mcnemar_exact_p,family,tier,ensemble_errors,ensemble_errors_that_are_shared_failures,shared_failures_total
+model_metrics,VGG16,0.934375,0.9329167880690292,0.7975,0.95,0.9975,0.9925,0.9742300415039062,0.03985504150390625,10.0,0.10671245540024148,105.0,,,,,,,,,,,,
+model_metrics,ResNet50,0.92625,0.9248544223720798,0.815,0.8975,1.0,0.9925,0.9737149047851562,0.04893035888671876,10.0,0.120251096762148,118.0,,,,,,,,,,,,
+model_metrics,EfficientNetB0,0.90125,0.8994530854431568,0.7625,0.8775,0.9875,0.9775,0.9236029052734375,0.02278808593750002,10.0,0.15281810095448778,158.0,,,,,,,,,,,,
+model_metrics,Ensemble_mean_prob,0.940625,0.9394748558395001,0.8225,0.945,1.0,0.995,0.9407440483570099,0.006733717123667521,10.0,0.10130394326127487,95.0,,,,,,,,,,,,
+ensemble_vs_VGG16,,,,,,,,,,,,,ensemble vs VGG16 (McNemar exact),19.0,9.0,0.006250000000000089,0.0,0.013125,0.08715855330228806,S_ensemble,secondary,,,
+ensemble_error_composition,,,,,,,,,,,,,,,,,,,,,,95.0,72.0,72.0
