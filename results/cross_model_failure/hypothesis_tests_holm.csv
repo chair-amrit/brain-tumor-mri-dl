@@ -1,0 +1,104 @@
+family,tier,test,p_raw,p_holm,significant_at_0_05
+P1_pairwise_error_association,primary,error association VGG16 vs ResNet50,1.3033702253162087e-84,3.910110675948626e-84,True
+P1_pairwise_error_association,primary,error association VGG16 vs EfficientNetB0,4.035137613108939e-71,4.035137613108939e-71,True
+P1_pairwise_error_association,primary,error association ResNet50 vs EfficientNetB0,4.443926671434491e-74,8.887853342868981e-74,True
+P1_shared_failure_permutation,primary,permutation unstratified,9.999000099990002e-05,0.00019998000199980003,True
+P1_shared_failure_permutation,primary,permutation class_stratified,9.999000099990002e-05,0.00019998000199980003,True
+S_permutation_robustness,secondary,permutation within_glioma_only,9.999000099990002e-05,0.0005999400059994001,True
+S_permutation_robustness,secondary,permutation within_meningioma_only,9.999000099990002e-05,0.0005999400059994001,True
+S_permutation_robustness,secondary,permutation within_notumor_only,1.0,1.0,False
+S_permutation_robustness,secondary,permutation within_pituitary_only,9.999000099990002e-05,0.0005999400059994001,True
+S_permutation_robustness,secondary,permutation class_stratified_excl_glioma,9.999000099990002e-05,0.0005999400059994001,True
+S_permutation_robustness,secondary,permutation class_stratified_excl_glioma_meningioma,9.999000099990002e-05,0.0005999400059994001,True
+P2_image_level_shared_vs_specific,primary,image_level: shared_failure vs one_model_failure [mean_conf],0.17676046887192676,0.17676046887192676,False
+P2_image_level_shared_vs_specific,primary,image_level: shared_failure vs one_model_failure [min_conf],0.005184859221673199,0.010369718443346398,True
+P2_image_level_shared_vs_specific,primary,image_level: shared_failure vs one_model_failure [conf_range],5.431142856443859e-05,0.0001629342856933158,True
+P2_image_level_shared_vs_specific,primary,image_level: shared_failure vs one_model_failure [mean_ptrue],2.26483598186795e-28,1.1324179909339751e-27,True
+P2_image_level_shared_vs_specific,primary,image_level: shared_failure vs one_model_failure [min_ptrue],1.1374977032978813e-23,4.5499908131915253e-23,True
+S_image_level_wrong_model_metrics,secondary,image_level: shared_failure vs one_model_failure [mean_conf_wrong_models],2.9426439968537016e-09,2.9426439968537016e-09,True
+S_image_level_wrong_model_metrics,secondary,image_level: shared_failure vs one_model_failure [mean_ptrue_wrong_models],3.876167624211314e-17,7.752335248422628e-17,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [mean_conf],0.02274661787579575,0.090986471503183,False
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [min_conf],0.1163011815053878,0.2326023630107756,False
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [conf_range],0.16518138509339952,0.2326023630107756,False
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [mean_ptrue],3.811851662654643e-16,4.1930368289201076e-15,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [min_ptrue],1.601448979679439e-09,1.601448979679439e-08,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [mean_conf_wrong_models],0.009150731190319401,0.04575365595159701,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs two_model_failures [mean_ptrue_wrong_models],7.929465432035294e-08,6.343572345628235e-07,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [mean_conf],0.05565586124795994,0.16696758374387982,False
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [min_conf],0.005615169831404341,0.033691018988426046,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [conf_range],0.0002469933943316744,0.0017289537603217208,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [mean_ptrue],1.720078349148338e-31,2.580117523722507e-30,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [min_ptrue],6.964589919919501e-24,9.053966895895351e-23,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [mean_conf_wrong_models],2.1074156978103872e-08,1.8966741280293484e-07,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs partial_failure [mean_ptrue_wrong_models],9.619091601978456e-18,1.1542909922374147e-16,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs correct_all [mean_conf],1.2868627472512597e-34,2.1876666703271416e-33,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs correct_all [min_conf],3.696503568401521e-33,5.914405709442433e-32,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs correct_all [conf_range],1.1344478281699583e-30,1.5882269594379417e-29,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs correct_all [mean_ptrue],7.062783785459709e-47,1.3065006514367332e-45,True
+S_difficulty_other_contrasts,secondary,image_level: shared_failure vs correct_all [min_ptrue],6.876319218088069e-47,1.3065006514367332e-45,True
+P2_own_error_shared_vs_specific,primary,own_error: VGG16 own errors shared vs specific_only_this_model [conf],0.0017953219010449965,0.0030066761131566644,True
+P2_own_error_shared_vs_specific,primary,own_error: VGG16 own errors shared vs specific_only_this_model [ptrue],1.971356193197779e-06,7.885424772791116e-06,True
+P2_own_error_shared_vs_specific,primary,own_error: ResNet50 own errors shared vs specific_only_this_model [conf],1.265799875562588e-05,3.797399626687764e-05,True
+P2_own_error_shared_vs_specific,primary,own_error: ResNet50 own errors shared vs specific_only_this_model [ptrue],4.184165276605022e-09,2.0920826383025112e-08,True
+P2_own_error_shared_vs_specific,primary,own_error: EfficientNetB0 own errors shared vs specific_only_this_model [conf],0.0015033380565783322,0.0030066761131566644,True
+P2_own_error_shared_vs_specific,primary,own_error: EfficientNetB0 own errors shared vs specific_only_this_model [ptrue],7.063646306597405e-11,4.238187783958443e-10,True
+S_own_error_shared_vs_nonshared,secondary,own_error: VGG16 own errors shared vs nonshared [conf],3.246881864727262e-05,6.493763729454524e-05,True
+S_own_error_shared_vs_nonshared,secondary,own_error: VGG16 own errors shared vs nonshared [ptrue],5.995393152565269e-10,2.3981572610261077e-09,True
+S_own_error_shared_vs_nonshared,secondary,own_error: ResNet50 own errors shared vs nonshared [conf],1.4386705060207474e-05,4.316011518062242e-05,True
+S_own_error_shared_vs_nonshared,secondary,own_error: ResNet50 own errors shared vs nonshared [ptrue],2.0971629089778678e-11,1.2582977453867207e-10,True
+S_own_error_shared_vs_nonshared,secondary,own_error: EfficientNetB0 own errors shared vs nonshared [conf],0.01653931048017888,0.01653931048017888,True
+S_own_error_shared_vs_nonshared,secondary,own_error: EfficientNetB0 own errors shared vs nonshared [ptrue],1.936508549796212e-10,9.68254274898106e-10,True
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [mean_conf] glioma,0.1427496051817516,0.6219703593533474,False
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [min_conf] glioma,0.07112298059955961,0.5689838447964769,False
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [conf_range] glioma,0.039055147115943274,0.39055147115943273,False
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [mean_ptrue] glioma,1.0282691228235296e-16,2.6734997193411767e-15,True
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [min_ptrue] glioma,2.0289979823203476e-15,5.072494955800869e-14,True
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [mean_conf_wrong_models] glioma,3.39356767776407e-05,0.0006447778587751733,True
+S_robustness_by_class,secondary,class_glioma: shared_failure vs one_model_failure [mean_ptrue_wrong_models] glioma,1.4218870313312699e-11,3.412528875195048e-10,True
+S_robustness_by_class,secondary,class_glioma: VGG16 own errors shared vs nonshared [conf] glioma,0.0006913334652122008,0.011061335443395213,True
+S_robustness_by_class,secondary,class_glioma: VGG16 own errors shared vs nonshared [ptrue] glioma,4.340762472682673e-08,9.983753687170147e-07,True
+S_robustness_by_class,secondary,class_glioma: ResNet50 own errors shared vs nonshared [conf] glioma,0.0031934082407407806,0.04790112361111171,True
+S_robustness_by_class,secondary,class_glioma: ResNet50 own errors shared vs nonshared [ptrue] glioma,7.242892367908962e-06,0.00014485784735817923,True
+S_robustness_by_class,secondary,class_glioma: EfficientNetB0 own errors shared vs nonshared [conf] glioma,0.19622366368738142,0.6219703593533474,False
+S_robustness_by_class,secondary,class_glioma: EfficientNetB0 own errors shared vs nonshared [ptrue] glioma,2.7131280704547336e-07,5.968881755000414e-06,True
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [mean_conf] meningioma,0.30148560620743203,0.6219703593533474,False
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [min_conf] meningioma,0.00732493376808388,0.09522413898509044,False
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [conf_range] meningioma,0.00014008155877206997,0.0025214680578972597,True
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [mean_ptrue] meningioma,1.149164566153695e-06,2.4132455889227592e-05,True
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [min_ptrue] meningioma,0.0002794462867491778,0.0047505868747360225,True
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [mean_conf_wrong_models] meningioma,0.006369347175142002,0.08917086045198802,False
+S_robustness_by_class,secondary,class_meningioma: shared_failure vs one_model_failure [mean_ptrue_wrong_models] meningioma,0.00732493376808388,0.09522413898509044,False
+S_robustness_by_class,secondary,class_meningioma: VGG16 own errors shared vs nonshared [conf] meningioma,0.08885290847904963,0.6219703593533474,False
+S_robustness_by_class,secondary,class_meningioma: VGG16 own errors shared vs nonshared [ptrue] meningioma,0.12122450301291662,0.6219703593533474,False
+S_robustness_by_class,secondary,class_meningioma: ResNet50 own errors shared vs nonshared [conf] meningioma,0.04041429230803091,0.39055147115943273,False
+S_robustness_by_class,secondary,class_meningioma: ResNet50 own errors shared vs nonshared [ptrue] meningioma,0.032323162223732625,0.35555478446105887,False
+S_robustness_by_class,secondary,class_meningioma: EfficientNetB0 own errors shared vs nonshared [conf] meningioma,0.09403008976126671,0.6219703593533474,False
+S_robustness_by_class,secondary,class_meningioma: EfficientNetB0 own errors shared vs nonshared [ptrue] meningioma,0.20139390196786133,0.6219703593533474,False
+S_confidence_error_detection,secondary,error detection VGG16,3.653482871487472e-50,3.653482871487472e-50,True
+S_confidence_error_detection,secondary,error detection ResNet50,1.673776815091026e-64,5.0213304452730785e-64,True
+S_confidence_error_detection,secondary,error detection EfficientNetB0,1.6205037698222168e-59,3.2410075396444335e-59,True
+S_shared_detection_A,secondary,shared_vs_all_others via VGG_conf,1.3899805230927744e-25,2.779961046185549e-25,True
+S_shared_detection_A,secondary,shared_vs_all_others via ResNet_conf,7.159858178211404e-31,3.579929089105702e-30,True
+S_shared_detection_A,secondary,shared_vs_all_others via EffNet_conf,6.272409341172909e-24,6.272409341172909e-24,True
+S_shared_detection_A,secondary,shared_vs_all_others via mean_conf,2.372803342470513e-28,9.491213369882053e-28,True
+S_shared_detection_A,secondary,shared_vs_all_others via min_conf,1.0003384908817258e-26,3.001015472645177e-26,True
+S_shared_detection_B,secondary,shared_vs_model_specific(1 wrong) via VGG_conf,0.9690431704041463,1.0,False
+S_shared_detection_B,secondary,shared_vs_model_specific(1 wrong) via ResNet_conf,0.6601759571722556,1.0,False
+S_shared_detection_B,secondary,shared_vs_model_specific(1 wrong) via EffNet_conf,0.04924861938874953,0.19699447755499813,False
+S_shared_detection_B,secondary,shared_vs_model_specific(1 wrong) via mean_conf,0.17676046887192676,0.5302814066157803,False
+S_shared_detection_B,secondary,shared_vs_model_specific(1 wrong) via min_conf,0.005184859221673199,0.025924296108365996,True
+S_shared_detection_C,secondary,shared_vs_partial(1 or 2 wrong) via VGG_conf,0.22413336594588307,0.44826673189176613,False
+S_shared_detection_C,secondary,shared_vs_partial(1 or 2 wrong) via ResNet_conf,0.3312434524482947,0.44826673189176613,False
+S_shared_detection_C,secondary,shared_vs_partial(1 or 2 wrong) via EffNet_conf,0.1080238728686036,0.3240716186058108,False
+S_shared_detection_C,secondary,shared_vs_partial(1 or 2 wrong) via mean_conf,0.05565586124795994,0.22262344499183975,False
+S_shared_detection_C,secondary,shared_vs_partial(1 or 2 wrong) via min_conf,0.005615169831404341,0.028075849157021705,True
+S_disagreement_error_rate,secondary,error rate VGG16: disagreement vs unanimous,2.1511143871999546e-33,2.1511143871999546e-33,True
+S_disagreement_error_rate,secondary,error rate ResNet50: disagreement vs unanimous,6.238126058447209e-46,1.2476252116894417e-45,True
+S_disagreement_error_rate,secondary,error rate EfficientNetB0: disagreement vs unanimous,8.833114296730798e-93,2.6499342890192392e-92,True
+S_disagreement_metric_compare,secondary,vote_entropy_bits: shared_failure vs one_model_failure,1.790532284991659e-20,3.581064569983318e-20,True
+S_disagreement_metric_compare,secondary,vote_entropy_bits: shared_failure vs correct_all,1.352673149095417e-100,5.410692596381668e-100,True
+S_disagreement_metric_compare,secondary,vote_entropy_bits: any_error vs correct_all,2.945176495482132e-256,1.7671058972892791e-255,True
+S_disagreement_metric_compare,secondary,jsd_bits: shared_failure vs one_model_failure,6.326364555703903e-11,6.326364555703903e-11,True
+S_disagreement_metric_compare,secondary,jsd_bits: shared_failure vs correct_all,9.534358421106545e-32,2.8603075263319633e-31,True
+S_disagreement_metric_compare,secondary,jsd_bits: any_error vs correct_all,4.499002136139855e-101,2.2495010680699277e-100,True
+S_ensemble,secondary,ensemble vs VGG16 (McNemar exact),0.08715855330228806,0.08715855330228806,False
