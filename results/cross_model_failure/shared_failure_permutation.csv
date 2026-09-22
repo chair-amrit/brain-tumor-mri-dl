@@ -1,0 +1,9 @@
+label,variant,n_images,n_perm,observed_shared,null_mean,null_lo95,null_hi95,null_max,analytic_expected_if_independent,observed_over_null_mean,empirical_p_upper_tail,family,tier
+permutation unstratified,unstratified,1600,10000,72,0.7635,0.0,3.0,6,0.7646953125,94.30255402750491,9.999000099990002e-05,P1_shared_failure_permutation,primary
+permutation class_stratified,class_stratified,1600,10000,72,3.8025,1.0,8.0,12,3.81056875,18.934911242603548,9.999000099990002e-05,P1_shared_failure_permutation,primary
+permutation within_glioma_only,within_glioma_only,400,10000,60,3.5411,1.0,7.0,11,3.5589375,16.94388749258705,9.999000099990002e-05,S_permutation_robustness,secondary
+permutation within_meningioma_only,within_meningioma_only,400,10000,10,0.2478,0.0,1.0,3,0.251125,40.35512510088781,9.999000099990002e-05,S_permutation_robustness,secondary
+permutation within_notumor_only,within_notumor_only,400,10000,0,0.0,0.0,0.0,0,0.0,0.0,1.0,S_permutation_robustness,secondary
+permutation within_pituitary_only,within_pituitary_only,400,10000,2,0.0005,0.0,0.0,1,0.00050625,4000.0,9.999000099990002e-05,S_permutation_robustness,secondary
+permutation class_stratified_excl_glioma,class_stratified_excl_glioma,1200,10000,12,0.2563,0.0,2.0,3,0.25163125,46.820132657042535,9.999000099990002e-05,S_permutation_robustness,secondary
+permutation class_stratified_excl_glioma_meningioma,class_stratified_excl_glioma_meningioma,800,10000,2,0.0005,0.0,0.0,1,0.00050625,4000.0,9.999000099990002e-05,S_permutation_robustness,secondary
