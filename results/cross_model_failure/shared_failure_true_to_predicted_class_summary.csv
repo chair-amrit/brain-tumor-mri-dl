@@ -1,0 +1,9 @@
+true_class,predicted_class,predictions_across_models,share_within_true_class_predictions_pct
+glioma,meningioma,118,65.6
+glioma,notumor,57,31.7
+glioma,pituitary,5,2.8
+meningioma,glioma,5,16.7
+meningioma,notumor,3,10.0
+meningioma,pituitary,22,73.3
+pituitary,glioma,1,16.7
+pituitary,meningioma,5,83.3
