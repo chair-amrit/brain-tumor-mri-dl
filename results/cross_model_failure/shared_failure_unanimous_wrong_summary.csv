@@ -1,0 +1,7 @@
+true_class,wrong_class,n_cases,share_of_unanimous_wrong_cases_pct
+glioma,meningioma,30,61.2
+glioma,notumor,10,20.4
+meningioma,pituitary,6,12.2
+meningioma,glioma,1,2.0
+meningioma,notumor,1,2.0
+pituitary,meningioma,1,2.0
