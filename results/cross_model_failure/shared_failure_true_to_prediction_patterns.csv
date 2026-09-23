@@ -1,0 +1,17 @@
+true_class,VGG16_prediction,ResNet50_prediction,EfficientNetB0_prediction,n_cases
+glioma,meningioma,meningioma,meningioma,30
+glioma,notumor,notumor,notumor,10
+glioma,notumor,meningioma,notumor,4
+glioma,notumor,notumor,meningioma,4
+glioma,meningioma,meningioma,notumor,3
+glioma,meningioma,notumor,notumor,3
+glioma,pituitary,meningioma,meningioma,3
+glioma,meningioma,notumor,meningioma,1
+glioma,meningioma,pituitary,meningioma,1
+glioma,pituitary,notumor,meningioma,1
+meningioma,pituitary,pituitary,pituitary,6
+meningioma,pituitary,glioma,pituitary,2
+meningioma,glioma,glioma,glioma,1
+meningioma,notumor,notumor,notumor,1
+pituitary,meningioma,meningioma,glioma,1
+pituitary,meningioma,meningioma,meningioma,1
